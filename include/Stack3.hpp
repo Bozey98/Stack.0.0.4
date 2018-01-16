@@ -15,19 +15,18 @@ private:
 	size_t count_;
 
 public:
-	Stack(); /*noexpect*/
-	Stack(const Stack<T>& Object); /*unsafe ---> strong*/  
-	size_t count() const; /*noexpect*/
-	size_t array_size() const; /*noexpect*/
-	void push(T const &); /*unsafe ---> strong*/ 
-	void pop(); /*strong*/
-	T top() /*strong*/;
-	T last() const; /*strong*/
-	void print(); /*strong*/
-	Stack<T>& operator=(const Stack<T>& Object); /*strong*/
-	void swap(Stack<T>&); /*noexpect*/
-	bool empty() const /*noexpect*/;
-
+	Stack();
+	Stack(const Stack<T>& Object); 
+	size_t count() const;
+	size_t array_size() const; 
+	void push(T const &); 
+	void pop();
+	T top() 
+	T last() const; 
+	void print();
+	Stack<T>& operator=(const Stack<T>& Object);
+	void swap(Stack<T>&); 
+	bool empty() const 
 
 
 };
@@ -139,14 +138,6 @@ void Stack<T>::print()
 	cout << endl;
 }
 
-
-template<typename T>
-Stack<T>& Stack<T>::operator=(const Stack<T>& Object)
-{
-	if (&Object != this)
-		Stack(Object).swap(*this);
-	return *this;
-}
 
 
 
