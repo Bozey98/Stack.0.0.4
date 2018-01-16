@@ -21,8 +21,7 @@ public:
 	size_t array_size() const; 
 	void push(T const &); 
 	void pop();
-	T top() 
-	T last() const; 
+	T top();
 	void print();
 	Stack<T>& operator=(const Stack<T>& Object);
 	void swap(Stack<T>&); 
@@ -122,13 +121,6 @@ T Stack<T>::top() {
 	else return array_[count_- 1];
 }
 
-template <typename T>
-T Stack<T>::last()const
-{
-	if (count_ == 0)
-		throw logic_error("Stack is empty");
-	else return array_[count_ - 1];
-}
 
 template <typename T>
 void Stack<T>::print()
